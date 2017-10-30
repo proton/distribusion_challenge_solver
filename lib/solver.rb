@@ -4,31 +4,33 @@ require 'csv'
 
 module DistributionChallenge
   class Solver
-    include ::Service
+    include Service
+
+    SOURCES = %w(sentinels sniffers loopholes)
+
+    attr_reader :password
 
     def call
-      password = get_password
+      get_password
+      exit_from_matrix
+    end
 
+    private
+
+    def get_password
+      @password = PasswordLoader.call
+    end
+
+    def exit_from_matrix
       all_routes = []
 
-      sources = %w(sentinels sniffers loopholes)
-      sources.each do |source|
+      SOURCES.each do |source|
         url = 'https://challenge.distribusion.com/the_one/routes'
         parameters = { source: source, passphrase: password }
         response = Unirest.get url, parameters: parameters
 
         p extract_entities(response.body)
       end
-    end
-
-    private
-
-    def get_password
-      url = 'https://challenge.distribusion.com/the_one'
-      headers = { 'Accept' => 'application/json' }
-      response = Unirest.get url, headers: headers
-      data = response.body
-      data['pills']['red']['passphrase']
     end
 
     def parse_csv_entities(entry)
