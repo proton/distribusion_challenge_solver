@@ -7,6 +7,7 @@ require 'csv'
 
 require 'password_loader'
 require 'sentinels_processor'
+require 'sniffers_processor'
 
 module DistributionChallenge
   class Solver
@@ -28,9 +29,12 @@ module DistributionChallenge
     end
 
     def exit_from_matrix
-      p SentinelsProcessor.call(password)
-      # p SniffersProcessor.call
-      # p LoopholesProcessor.call
+      responses = []
+      responses += SentinelsProcessor.call(password)
+      responses += SniffersProcessor.call(password)
+      # responses += LoopholesProcessor.call(password)
+      puts responses
+      responses
     end
   end
 end
