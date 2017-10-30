@@ -10,6 +10,20 @@ def get_password
   data['pills']['red']['passphrase']
 end
 
+def extract_entities(data)
+  entity_regex = /\w+\/(?<name>\w+)\.(?<extention>\w+)$/
+  Zip::File.open_buffer(data) do |zip|
+    zip.each do |entry|
+      m = entry.name.match entity_regex
+      next unless m
+      p m
+    end
+    # content = routes_entry.get_input_stream.read
+    # arr = CSV.parse(content, quote_char: '"', col_sep: ', ', headers: :first_row)
+    # p arr[0]
+  end
+end
+
 password = get_password
 
 all_routes = []
@@ -20,34 +34,5 @@ sources.each do |source|
   parameters = { source: source, passphrase: password }
   response = Unirest.get url, parameters: parameters
 
-  entity_regex = /^#{source}.*\/\w+.*$/
-  Zip::File.open_buffer(response.body) do |zip|
-    entries = zip.select { |entry| entry.name =~ entity_regex }
-    puts entries
-    # routes_entry = zip.detect { |entry| entry.name =~ /^#{source}.*\/routes.*\.csv$/ }
-    # content = routes_entry.get_input_stream.read
-    # arr = CSV.parse(content, quote_char: '"', col_sep: ', ', headers: :first_row)
-    # p arr[0]
-  end
+  p extract_entities(response.body)
 end
-
-# Zip::File.open_buffer(response.body) do |zip|
-#   routes_entry = zip.detect { |entry| entry.name =~ /^#{source}.*\/routes.*\.csv$/ }
-#   content = routes_entry.get_input_stream.read
-#   arr = CSV.parse(content, quote_char: '"', col_sep: ', ', headers: :first_row)
-#   p arr[0]
-# end
-#
-# # get sniffers
-#
-# source = 'sniffers'
-# parameters = { source: source, passphrase: password }
-# response = Unirest.get routes_url, parameters: parameters
-#
-# Zip::File.open_buffer(response.body) do |zip|
-#   puts zip.to_a
-#   # routes_entry = zip.detect { |entry| entry.name =~ /^#{source}.*\/routes.*\.csv$/ }
-#   # content = routes_entry.get_input_stream.read
-#   # arr = CSV.parse(content, quote_char: '"', col_sep: ', ', headers: :first_row)
-#   # p arr[0]
-# end
