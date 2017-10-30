@@ -10,7 +10,7 @@ module DistributionChallenge
     attr_reader :data
 
     def call
-      load_url
+      load_data
       password
     end
 
@@ -20,7 +20,7 @@ module DistributionChallenge
       data['pills']['red']['passphrase']
     end
 
-    def load_url
+    def load_data
       headers = { 'Accept' => 'application/json' }
       response = Unirest.get URL, headers: headers
       @data = response.body
