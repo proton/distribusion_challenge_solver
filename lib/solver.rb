@@ -1,6 +1,11 @@
+lib_dir = File.expand_path(File.dirname(__FILE__) + '/../lib')
+$:.unshift(lib_dir) unless $:.include?(lib_dir)
+
 require 'unirest'
 require 'zip'
 require 'csv'
+
+require 'password_loader'
 
 module DistributionChallenge
   class Solver

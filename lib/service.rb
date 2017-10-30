@@ -2,7 +2,6 @@
 module DistributionChallenge
   module Service
     def Service.included(mod)
-      puts "#{self} included in #{mod}"
       def mod.call(*args)
         new(*args).call
       end
