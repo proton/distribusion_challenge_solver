@@ -3,6 +3,7 @@ $:.unshift(lib_dir) unless $:.include?(lib_dir)
 
 require 'webmock/rspec'
 require 'vcr'
+require 'base64'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -92,11 +93,13 @@ end
 
 VCR.configure do |c|
   c.configure_rspec_metadata!
-  c.cassette_library_dir = 'fixtures/vcr_cassettes' #указываем директорию где у нас будут лежать файлы с цепочками запросов
+  c.cassette_library_dir = 'fixtures/vcr_cassettes'
   c.hook_into :webmock
 
   c.around_http_request do |request|
-    cassette = request.uri.split('://').last
+    uri = request.uri.split('://').last
+    base_url, get_params = uri.split('?')
+    cassette = [base_url, Base64.encode64(get_params.to_s), Base64.encode64(request.body)].reject(&:empty?).join('/')
     VCR.use_cassette(cassette, &request)
   end
 end

@@ -30,7 +30,6 @@ module DistributionChallenge
       responses += SentinelsProcessor.call(password)
       responses += LoopholesProcessor.call(password)
       responses += SniffersProcessor.call(password)
-      puts responses
       responses
     end
   end
