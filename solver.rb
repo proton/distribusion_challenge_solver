@@ -23,6 +23,6 @@ response = Unirest.get routes_url, parameters: parameters
 Zip::File.open_buffer(response.body) do |zip|
   routes_entry = zip.detect { |entry| entry.name =~ /^#{source}.*\/routes.*\.csv$/ }
   content = routes_entry.get_input_stream.read
-  arr = CSV.parse(content, quote_char: '"', col_sep: ', ')
-  p arr
+  arr = CSV.parse(content, quote_char: '"', col_sep: ', ', headers: :first_row)
+  p arr[0]
 end
