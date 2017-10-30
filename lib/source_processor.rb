@@ -1,4 +1,7 @@
 require 'unirest'
+require 'zip'
+require 'csv'
+
 require 'service'
 
 module DistributionChallenge

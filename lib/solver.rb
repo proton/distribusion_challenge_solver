@@ -1,13 +1,10 @@
 lib_dir = File.expand_path(File.dirname(__FILE__) + '/../lib')
 $:.unshift(lib_dir) unless $:.include?(lib_dir)
 
-require 'unirest'
-require 'zip'
-require 'csv'
-
 require 'password_loader'
 require 'sentinels_processor'
 require 'sniffers_processor'
+require 'loopholes_processor'
 
 module DistributionChallenge
   class Solver
@@ -31,8 +28,8 @@ module DistributionChallenge
     def exit_from_matrix
       responses = []
       responses += SentinelsProcessor.call(password)
+      responses += LoopholesProcessor.call(password)
       responses += SniffersProcessor.call(password)
-      # responses += LoopholesProcessor.call(password)
       puts responses
       responses
     end
