@@ -15,6 +15,10 @@ def parse_csv_entities(entry)
   CSV.parse(content, quote_char: '"', col_sep: ', ', headers: :first_row).map(&:to_hash)
 end
 
+def singularize(name)
+  name.sub(/s$/, '')
+end
+
 def parse_json_entities(entry)
   content = entry.get_input_stream.read
   h = JSON.parse(content)
@@ -38,6 +42,16 @@ def extract_entities(data)
         parse_json_entities(entry)
       end
     end
+  end
+  # indexing
+  result.each do |entity_name, entities|
+    id_field = singularize(entity_name) + '_id'
+    h = entities.map do |entity|
+      id = entity.delete id_field
+      id ||= entity.delete 'id'
+      [id, entity]
+    end.to_h
+    result[entity_name] = h
   end
   result
 end
