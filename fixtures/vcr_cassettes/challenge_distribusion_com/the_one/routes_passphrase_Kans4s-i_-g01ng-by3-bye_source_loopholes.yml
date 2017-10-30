@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://challenge.distribusion.com/the_one/routes?passphrase=Kans4s-i$-g01ng-by3-bye&source=loopholes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip
+      User-Agent:
+      - unirest-ruby/1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 30 Oct 2017 18:30:22 GMT
+      Content-Type:
+      - application/zip
+      Content-Length:
+      - '723'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - attachment; filename*=UTF-8''loopholes
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        UEsDBAoAAAAAACqKY0kAAAAAAAAAAAAAAAAKABAAbG9vcGhvbGVzL1VYDACD
+        bRxYEGMbWPUBFABQSwMEFAAIAAgAQYtjSQAAAAAAAAAAAAAAABkAEABsb29w
+        aG9sZXMvbm9kZV9wYWlycy5qc29uVVgMAMhsHFgaZRtY9QEUAKvmUlBQystP
+        SY0vSMwsKlayUogGiigoVINJoFxmClBMyVBJByZQXJJYVBIP0gKSSE/MzU1E
+        SKbmpcClSjJSSxKVwDK1OtgMNcJlaBJII3lmGuMyE6ITq6E5iblJKTBTgWQs
+        Vy0XAFBLBwjG0b4KZgAAABgBAABQSwMEFAAIAAgAGY5jSQAAAAAAAAAAAAAA
+        ABUAEABsb29waG9sZXMvcm91dGVzLmpzb25VWAwAyWwcWHJqG1j1ARQAq+ZS
+        UFAqyi8tSS1WslKIBvIUFKrBJEw8PjMFKKNkqKQDE87LT0mNL0jMLMKUKi5J
+        LCqJL8nMTQVJGBkYG+gaGukaG4YYGlsZGFgZmEQh1KbmpeBRaRqlBFZYq0OW
+        m4yJd5Mp0W4yI8JNRrjdZDQI3URCOJkR7SZzItxkjNtNlsS7yYBoNxnA3AQk
+        Y7lquQBQSwcIgR/xeY8AAAD5AgAAUEsBAhUDCgAAAAAAKopjSQAAAAAAAAAA
+        AAAAAAoADAAAAAAAAAAAQO1BAAAAAGxvb3Bob2xlcy9VWAgAg20cWBBjG1hQ
+        SwECFQMUAAgACABBi2NJxtG+CmYAAAAYAQAAGQAMAAAAAAAAAABApIE4AAAA
+        bG9vcGhvbGVzL25vZGVfcGFpcnMuanNvblVYCADIbBxYGmUbWFBLAQIVAxQA
+        CAAIABmOY0mBH/F5jwAAAPkCAAAVAAwAAAAAAAAAAECkgfUAAABsb29waG9s
+        ZXMvcm91dGVzLmpzb25VWAgAyWwcWHJqG1hQSwUGAAAAAAMAAwDmAAAA1wEA
+        AAAA
+    http_version: 
+  recorded_at: Mon, 30 Oct 2017 18:30:22 GMT
+recorded_with: VCR 2.9.3

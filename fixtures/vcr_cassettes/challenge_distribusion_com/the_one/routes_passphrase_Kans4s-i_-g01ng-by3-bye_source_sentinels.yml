@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://challenge.distribusion.com/the_one/routes?passphrase=Kans4s-i$-g01ng-by3-bye&source=sentinels
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip
+      User-Agent:
+      - unirest-ruby/1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 30 Oct 2017 18:30:21 GMT
+      Content-Type:
+      - application/zip
+      Content-Length:
+      - '996'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - attachment; filename*=UTF-8''sentinels
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        UEsDBAoAAAAAAHeGY0kAAAAAAAAAAAAAAAAKABAAc2VudGluZWxzL1VYDACF
+        bRxYEV0bWPUBFABQSwMEFAAIAAgASYtjSQAAAAAAAAAAAAAAABQAEABzZW50
+        aW5lbHMvcm91dGVzLmNzdlVYDABldRtYKWUbWPUBFACNzj0KAjEQhuHeU8i0
+        cWF+VHTPYS+RDBrY7IpEEE+vEzHIFpJm5iue4oXbdM96jAFWSxinoPbjGPRh
+        I8eksACy7YfrxdtAO4yCHXEndGDuEXskh/v3+PKT5qJppmlXNDvc/OizT6lw
+        nvNt4eJQPryAoEP+18K1hRtapLZwS8u6toiBp7alvABQSwcI7IdKU4cAAABq
+        AQAAUEsDBAoAAAAAAMdhZEkAAAAAAAAAAAAAAAAJABAAX19NQUNPU1gvVVgM
+        AIVtHFiFbRxY9QEUAFBLAwQKAAAAAADHYWRJAAAAAAAAAAAAAAAAEwAQAF9f
+        TUFDT1NYL3NlbnRpbmVscy9VWAwAhW0cWIVtHFj1ARQAUEsDBBQACAAIAEmL
+        Y0kAAAAAAAAAAAAAAAAfABAAX19NQUNPU1gvc2VudGluZWxzLy5fcm91dGVz
+        LmNzdlVYDABldRtYKWUbWPUBFABjYBVjZ2BiYPBNTFbwD1aIUIACkBgDJxAb
+        AfECIAbxLzEQBRxDQoKgTJCOFUCshaaEESGukpyfq5dYUJCTqpebWpKYkliS
+        aBWf7eviWZKaG1qcWhSSmF7MwJBUkJNZXGJgsIADagAjkknIgBMAUEsHCJbe
+        AqhtAAAA0gAAAFBLAQIVAwoAAAAAAHeGY0kAAAAAAAAAAAAAAAAKAAwAAAAA
+        AAAAAEDtQQAAAABzZW50aW5lbHMvVVgIAIVtHFgRXRtYUEsBAhUDFAAIAAgA
+        SYtjSeyHSlOHAAAAagEAABQADAAAAAAAAAAAQKSBOAAAAHNlbnRpbmVscy9y
+        b3V0ZXMuY3N2VVgIAGV1G1gpZRtYUEsBAhUDCgAAAAAAx2FkSQAAAAAAAAAA
+        AAAAAAkADAAAAAAAAAAAQP1BEQEAAF9fTUFDT1NYL1VYCACFbRxYhW0cWFBL
+        AQIVAwoAAAAAAMdhZEkAAAAAAAAAAAAAAAATAAwAAAAAAAAAAED9QUgBAABf
+        X01BQ09TWC9zZW50aW5lbHMvVVgIAIVtHFiFbRxYUEsBAhUDFAAIAAgASYtj
+        SZbeAqhtAAAA0gAAAB8ADAAAAAAAAAAAQKSBiQEAAF9fTUFDT1NYL3NlbnRp
+        bmVscy8uX3JvdXRlcy5jc3ZVWAgAZXUbWCllG1hQSwUGAAAAAAUABQB7AQAA
+        UwIAAAAA
+    http_version: 
+  recorded_at: Mon, 30 Oct 2017 18:30:21 GMT
+recorded_with: VCR 2.9.3

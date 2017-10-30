@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://challenge.distribusion.com/the_one/routes?passphrase=Kans4s-i$-g01ng-by3-bye&source=sniffers
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip
+      User-Agent:
+      - unirest-ruby/1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 30 Oct 2017 18:30:21 GMT
+      Content-Type:
+      - application/zip
+      Content-Length:
+      - '856'
+      Connection:
+      - keep-alive
+      Content-Disposition:
+      - attachment; filename*=UTF-8''sniffers
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        UEsDBAoAAAAAADeQY0kAAAAAAAAAAAAAAAAJABAAc25pZmZlcnMvVVgMAIdt
+        HFh6bRtY9QEUAFBLAwQUAAgACACTYWRJAAAAAAAAAAAAAAAAFwAQAHNuaWZm
+        ZXJzL25vZGVfdGltZXMuY3N2VVgMACZtHFglbRxY9QEUAFWMQQ7DMAgE731F
+        xTkHu+1/EA0oQrJxZOP/p1wq58TujBawxoKuVVAZticMp+4YNJoY/zPPTq7N
+        UA2rlqJD9mY84AE5fKH6ZYrkNOPklNJPvhZ0Dl3Me0GtykGL+9xf3oYXUEsH
+        CKq1ysBiAAAAtQAAAFBLAwQUAAgACAAPkGNJAAAAAAAAAAAAAAAAEwAQAHNu
+        aWZmZXJzL3JvdXRlcy5jc3ZVWAwAIHAbWC5tG1j1ARQAUyrKLy1Jjc9MUdJR
+        UCrJzE2F0fFV+XmpSlxKhiABIwNjA11DI11jwxBDYysDAysDM5BwaIjzoY0g
+        ngFQoRF2heYYCo2xKzRAVwgAUEsHCLCWqgdLAAAAmwAAAFBLAwQUAAgACACa
+        YWRJAAAAAAAAAAAAAAAAFgAQAHNuaWZmZXJzL3NlcXVlbmNlcy5jc3ZVWAwA
+        NG0cWDNtHFj1ARQAUyrKLy1Jjc9MUdJRUMrLT0mNL8nMBfO5lAxBYoYwhhGM
+        YQxkGIEYJjAGSMQYxLBU4gIAUEsHCAV/zV4zAAAAUQAAAFBLAQIVAwoAAAAA
+        ADeQY0kAAAAAAAAAAAAAAAAJAAwAAAAAAAAAAEDtQQAAAABzbmlmZmVycy9V
+        WAgAh20cWHptG1hQSwECFQMUAAgACACTYWRJqrXKwGIAAAC1AAAAFwAMAAAA
+        AAAAAABApIE3AAAAc25pZmZlcnMvbm9kZV90aW1lcy5jc3ZVWAgAJm0cWCVt
+        HFhQSwECFQMUAAgACAAPkGNJsJaqB0sAAACbAAAAEwAMAAAAAAAAAABApIHu
+        AAAAc25pZmZlcnMvcm91dGVzLmNzdlVYCAAgcBtYLm0bWFBLAQIVAxQACAAI
+        AJphZEkFf81eMwAAAFEAAAAWAAwAAAAAAAAAAECkgYoBAABzbmlmZmVycy9z
+        ZXF1ZW5jZXMuY3N2VVgIADRtHFgzbRxYUEsFBgAAAAAEAAQAMQEAABECAAAA
+        AA==
+    http_version: 
+  recorded_at: Mon, 30 Oct 2017 18:30:21 GMT
+recorded_with: VCR 2.9.3

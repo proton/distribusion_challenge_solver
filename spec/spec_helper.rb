@@ -94,4 +94,9 @@ VCR.configure do |c|
   c.configure_rspec_metadata!
   c.cassette_library_dir = 'fixtures/vcr_cassettes' #указываем директорию где у нас будут лежать файлы с цепочками запросов
   c.hook_into :webmock
+
+  c.around_http_request do |request|
+    cassette = request.uri.split('://').last
+    VCR.use_cassette(cassette, &request)
+  end
 end
